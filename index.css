@@ -99,6 +99,11 @@
     display: block;
 }
 
+.cat-name
+{
+    display: none;
+}
+
 #presentation
 {
     margin: 0;
