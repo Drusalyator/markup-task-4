@@ -5,7 +5,7 @@
 
 .general-layout
 {
-    background: #CADAE8;
+    background: #cadae8;
     min-width: 415px;
     height: 100%;
 }
@@ -15,7 +15,7 @@
     width: 100%;
     margin: 0 auto;
     height: 80px;
-    background: #3386CB;
+    background: #3386cb;
     box-shadow: 0 3px 15px rgba(0,0,0,.25);
 }
 
@@ -32,10 +32,10 @@
 {
     height: 40px;
     width: 40px;
-    background: url("pictures/button_list.png");
+    background: url('pictures/button_list.png');
     float: right;
     border-radius: 7px;
-    margin: 8px 0px;
+    margin: 8px 0;
 }
 
 .wrapper
@@ -44,6 +44,7 @@
     width: 80%;
     box-sizing: border-box;
     text-align: center;
+    vertical-align: top;
 }
 
 .article-about-cat
@@ -54,18 +55,18 @@
     box-sizing: border-box;
     border-radius: 10px;
     background: white;
-    box-shadow: 0 3px 15px rgba(0,0,0,.20);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, .2);
 }
 
 .article-about-cat:hover
 {
-    box-shadow: 0 8px 15px rgba(0,0,0,.5);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .5);
 }
 
 .cat-photo-layout
 {
     padding: 15px;
-    margin: 0px;
+    margin: 0;
     box-sizing: border-box;
     display: inline-block;
 }
@@ -93,41 +94,107 @@
 
 .text-about-cat
 {
-    padding: 15px;
+    padding: 0 25px 10px;
     text-align: left;
     box-sizing: border-box;
     display: block;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-about-cat p
+{
+    color: gray;
+    font-weight: inherit;
 }
 
 .cat-name
 {
+    display: block;
+    color: black;
+    font-size: 1.8em;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cat-name,
+.cat-name:visited
+{
+    text-decoration: none;
+}
+
+.cat-name:hover
+{
+    color: #3386cb;
+}
+
+.cat-breed,
+.cat-disease
+{
+    margin: .15em 0;
+}
+
+.cat-age
+{
+    margin-bottom: .15em;
+}
+
+.additional-information
+{
     display: none;
 }
 
-#presentation
+input[name='presentation']
 {
     margin: 0;
     display: none;
 }
 
-#presentation:checked ~ .general-layout .change-presantation-button
+input[name='presentation']:checked ~ .general-layout .change-presantation-button
 {
-    background: url("pictures/button_blocks.png");
+    background: url('pictures/button_blocks.png');
 }
 
-#presentation:checked ~ .general-layout .article-about-cat
+input[name='presentation']:checked ~ .general-layout .article-about-cat
 {
     margin: 20px auto;
     width: 100%;
     display: block;
 }
 
-#presentation:checked ~ .general-layout .wrapper
+input[name='presentation']:checked ~ .general-layout .wrapper
 {
     text-align: left;
 }
 
-#presentation:checked ~ .general-layout .text-about-cat
+input[name='presentation']:checked ~ .general-layout .text-about-cat
+{
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px 10px 10px;
+    width: 63%;
+}
+
+input[name='presentation']:checked ~ .general-layout .additional-information
 {
     display: block;
+}
+
+@media screen and (max-width: 1150px) 
+{
+    input[name='presentation']:checked ~ .general-layout .text-about-cat
+    {
+        margin: 10px 30px;
+        width: 90%;
+    }
+
+    input[name='presentation']:checked ~ .general-layout .cat-photo-layout
+    {
+        width: 100%;
+    }
+
+    input[name='presentation']:checked ~ .general-layout .cat-photo-wrapper
+    {
+        margin: auto;
+    }
 }
