@@ -107,14 +107,18 @@
     font-weight: inherit;
 }
 
-.cat-name
+.cat-name-wrapper
 {
     display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cat-name
+{
     color: black;
     font-size: 1.8em;
     font-weight: bold;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .cat-name,
